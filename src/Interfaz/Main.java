@@ -15,7 +15,7 @@ public class Main {
 	    Paises pais1 = new Paises("Argentina",0,false,"C");
 		Paises pais2 = new Paises("Arabia Saudita",0,false,"C");
 		Paises pais3 = new Paises("Mexico",0,false,"C");
-		Paises pais4 = new Paises("Polonia",0,false,"Grupo C");
+		Paises pais4 = new Paises("Polonia",0,false,"C");
 		
 		Paises pais5 = new Paises("Qatar",0,false,"A");
 		Paises pais6 = new Paises("Ecuador",0,false,"A");
@@ -261,16 +261,6 @@ public class Main {
 		}
 		
 		
-		
-		System.out.println(grupoA);
-		System.out.println(grupoB);
-		System.out.println(grupoC);
-		System.out.println(grupoD);
-		System.out.println(grupoE);
-		System.out.println(grupoF);
-		System.out.println(grupoG);
-		System.out.println(grupoH);
-		
 		LinkedList<Grupo> Grupos =new LinkedList<Grupo>();
 		Grupos.add(grupoA);
 		Grupos.add(grupoB);
@@ -317,43 +307,109 @@ public class Main {
     	
     	      switch (num) {
 		      case 1:
-		    	  
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("A")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
+						
+					
+		  		
 		    		 
 			       break;
 		      case 2:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("B")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 		      case 3:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("C")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 		      case 4:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("D")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 		      case 5:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("E")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 		      case 6:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("F")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 		      case 7:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("G")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 		      case 8:
+		    	  for (Grupo grupo : Grupos) {
+		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("H")) {
+		    			  System.out.println(grupo.getEquipo1());
+		    			  System.out.println(grupo.getEquipo2());
+		    			  System.out.println(grupo.getEquipo3());
+		    			  System.out.println(grupo.getEquipo4());
+					}
+				}
 					
 			       break;
 
 		       default:
 			   break;
-		     }
+    	      }
     	
 		
 		break;
 		
 
-	default:
+	   default:
 		break;
 	}
-		
+	  
 		
 		
 		

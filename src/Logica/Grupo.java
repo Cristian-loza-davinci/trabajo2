@@ -1,4 +1,4 @@
-package Logica;
+ package Logica;
 
 public class Grupo {
 	private Paises equipo1;
