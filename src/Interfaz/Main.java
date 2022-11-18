@@ -1,11 +1,11 @@
 package Interfaz;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 import Logica.Grupo;
 import Logica.Paises;
+import Logica.Partido;
 
 public class Main {
 
@@ -87,14 +87,7 @@ public class Main {
 		faseGrupos.add(29,pais30);
 		faseGrupos.add(30,pais31);
 		faseGrupos.add(31,pais32);
-		
-		
-		
-		
-		/*for (int i = 0; i <faseGrupos.size(); i++) {
-			System.out.println("Equipo numero "+ (i+1)+ ":" +  faseGrupos.get(i));
-		}*/
-		
+	
 		Grupo grupoA = new Grupo(null,null,null,null);
 		Grupo grupoB = new Grupo(null,null,null,null);
 		Grupo grupoC = new Grupo(null,null,null,null);
@@ -104,7 +97,7 @@ public class Main {
 		Grupo grupoG = new Grupo(null,null,null,null);
 		Grupo grupoH = new Grupo(null,null,null,null);
 		
-		
+		//--------------------AGRUPACION DE PAISES EN SUS GRUPOS-----------
 		int cont1=0;
 		int cont2=0;
 		int cont3=0;
@@ -131,7 +124,6 @@ public class Main {
 					grupoA.setEquipo4(paises);
 				}
 			}
-			
 			if(paises.getGrupo().equalsIgnoreCase("B")) {
 				cont2++;
 				if(cont2==1) {
@@ -146,11 +138,8 @@ public class Main {
 				if(cont2==4) {
 					grupoB.setEquipo4(paises);
 				}
-				
-				
-				
 			}
-			if(paises.getGrupo().equals("C")) {
+			if(paises.getGrupo().equalsIgnoreCase("C")) {
 				cont3++;
 				if(cont3==1) {
 				    grupoC.setEquipo1(paises);
@@ -164,11 +153,8 @@ public class Main {
 				if(cont3==4) {
 					grupoC.setEquipo4(paises);
 				}
-				
-				
-				
 			}
-			if(paises.getGrupo().equals("D")) {
+			if(paises.getGrupo().equalsIgnoreCase("D")) {
 				cont4++;
 				if(cont4==1) {
 				    grupoD.setEquipo1(paises);
@@ -181,10 +167,9 @@ public class Main {
 				}
 				if(cont4==4) {
 					grupoD.setEquipo4(paises);
-				}
-				
+				}	
 			}
-			if(paises.getGrupo().equals("E")) {
+			if(paises.getGrupo().equalsIgnoreCase("E")) {
 				cont5++;
 				if(cont5==1) {
 				    grupoE.setEquipo1(paises);
@@ -198,11 +183,8 @@ public class Main {
 				if(cont5==4) {
 					grupoE.setEquipo4(paises);
 				}
-				
-				
-				
 			}
-			if(paises.getGrupo().equals("F")) {
+			if(paises.getGrupo().equalsIgnoreCase("F")) {
 				cont6++;
 				if(cont6==1) {
 				    grupoF.setEquipo1(paises);
@@ -215,12 +197,9 @@ public class Main {
 				}
 				if(cont6==4) {
 					grupoF.setEquipo4(paises);
-				}
-				
-				
-				
+				}	
 			}
-			if(paises.getGrupo().equals("G")) {
+			if(paises.getGrupo().equalsIgnoreCase("G")) {
 				cont7++;
 				if(cont7==1) {
 				    grupoG.setEquipo1(paises);
@@ -234,11 +213,8 @@ public class Main {
 				if(cont7==4) {
 					grupoG.setEquipo4(paises);
 				}
-				
-				
-				
 			}
-			if(paises.getGrupo().equals("H")) {
+			if(paises.getGrupo().equalsIgnoreCase("H")) {
 				cont8++;
 				if(cont8==1) {
 				    grupoH.setEquipo1(paises);
@@ -251,15 +227,9 @@ public class Main {
 				}
 				if(cont8==4) {
 					grupoH.setEquipo4(paises);
-				}
-				
-				
-				
-			}
-			
-			
+				}	
+			}	
 		}
-		
 		
 		LinkedList<Grupo> Grupos =new LinkedList<Grupo>();
 		Grupos.add(grupoA);
@@ -273,156 +243,521 @@ public class Main {
 		
 		
 		
+		Partido partido1 =new Partido("A",null,null,0,0);
+		Partido partido2 =new Partido("A",null,null,0,0);
+		Partido partido3 =new Partido("A",null,null,0,0);
+		Partido partido4 =new Partido("A",null,null,0,0);
+		Partido partido5 =new Partido("A",null,null,0,0);
+		Partido partido6 =new Partido("A",null,null,0,0);
+		Partido partido7 =new Partido("B",null,null,0,0);
+		Partido partido8 =new Partido("B",null,null,0,0);
+		Partido partido9 =new Partido("B",null,null,0,0);
+		Partido partido10 =new Partido("B",null,null,0,0);
+		Partido partido11 =new Partido("B",null,null,0,0);
+		Partido partido12 =new Partido("B",null,null,0,0);
+		Partido partido13 =new Partido("C",null,null,0,0);
+		Partido partido14 =new Partido("C",null,null,0,0);
+		Partido partido15=new Partido("C",null,null,0,0);
+		Partido partido16 =new Partido("C",null,null,0,0);
+		Partido partido17 =new Partido("C",null,null,0,0);
+		Partido partido18 =new Partido("C",null,null,0,0);
+		Partido partido19 =new Partido("D",null,null,0,0);
+		Partido partido20 =new Partido("D",null,null,0,0);
+		Partido partido21 =new Partido("D",null,null,0,0);
+		Partido partido22 =new Partido("D",null,null,0,0);
+		Partido partido23 =new Partido("D",null,null,0,0);
+		Partido partido24 =new Partido("D",null,null,0,0);
+		Partido partido25 =new Partido("E",null,null,0,0);	
+		Partido partido26 =new Partido("E",null,null,0,0);
+		Partido partido27 =new Partido("E",null,null,0,0);	
+		Partido partido28 =new Partido("E",null,null,0,0);	
+		Partido partido29 =new Partido("E",null,null,0,0);	
+		Partido partido30 =new Partido("E",null,null,0,0);	
+		Partido partido31 =new Partido("F",null,null,0,0);	
+		Partido partido32 =new Partido("F",null,null,0,0);
+		Partido partido33 =new Partido("F",null,null,0,0);	
+		Partido partido34 =new Partido("F",null,null,0,0);	
+		Partido partido35 =new Partido("F",null,null,0,0);	
+		Partido partido36 =new Partido("F",null,null,0,0);	
+		Partido partido37 =new Partido("G",null,null,0,0);	
+		Partido partido38 =new Partido("G",null,null,0,0);
+		Partido partido39 =new Partido("G",null,null,0,0);	
+		Partido partido40 =new Partido("G",null,null,0,0);
+		Partido partido41 =new Partido("G",null,null,0,0);	
+		Partido partido42 =new Partido("G",null,null,0,0);	
+		Partido partido43 =new Partido("H",null,null,0,0);	
+		Partido partido44 =new Partido("H",null,null,0,0);	
+		Partido partido45 =new Partido("H",null,null,0,0);	
+		Partido partido46 =new Partido("H",null,null,0,0);	
+		Partido partido47 =new Partido("H",null,null,0,0);	
+		Partido partido48 =new Partido("H",null,null,0,0);	
 		
-		
-	  Scanner entrada = new Scanner(System.in);
-	  System.out.println("Bienvenido al fixtuere del Mundial");
-	  System.out.println("-----------------------------------");
-	  
-	  System.out.println("¿Que opcion desea elegir?");
-	  System.out.println("1-Ver lista de todos los paises ");
-	  System.out.println("2-Ver los grupos ");
-	  int res= entrada.nextInt();
-	  
-	  switch (res) {
-	  
-	case 1:
-		System.out.println("Lista de los 32 Equipos");
-		for (int i = 0; i <faseGrupos.size(); i++) {
-			System.out.println("Equipo numero "+ (i+1)+ ":" +  faseGrupos.get(i));
+		int aux1=0;
+		int aux2=0;
+		int aux3=0;
+		int aux4=0;
+		int aux5=0;
+		int aux6=0;
+		int aux7=0;
+		int aux8=0;
+		for (Paises pais : faseGrupos) {
+			if(pais.getGrupo().equalsIgnoreCase("A")) {
+				aux1++;
+				if(aux1==1) {
+				    partido1.setPaisA(pais);
+				    partido2.setPaisB(pais);
+				    partido3.setPaisA(pais);
+				
+				}
+				if(aux1==2) {
+					partido1.setPaisB(pais);
+					partido4.setPaisA(pais);
+					partido5.setPaisB(pais);
+				}
+				if(aux1==3) {
+					partido2.setPaisA(pais);
+					partido4.setPaisB(pais);
+					partido6.setPaisA(pais);
+				}
+				if(aux1==4) {
+					partido3.setPaisB(pais);
+					partido5.setPaisA(pais);
+					partido6.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("B")) {
+				aux2++;
+				if(aux2==1) {
+				    partido7.setPaisA(pais);
+				    partido8.setPaisB(pais);
+				    partido9.setPaisA(pais);
+				
+				}
+				if(aux2==2) {
+					partido7.setPaisB(pais);
+					partido10.setPaisA(pais);
+					partido11.setPaisB(pais);
+				}
+				if(aux2==3) {
+					partido8.setPaisA(pais);
+					partido10.setPaisB(pais);
+					partido12.setPaisA(pais);
+				}
+				if(aux2==4) {
+					partido9.setPaisB(pais);
+					partido11.setPaisA(pais);
+					partido12.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("C")) {
+				aux3++;
+				if(aux3==1) {
+				    partido13.setPaisA(pais);
+				    partido14.setPaisB(pais);
+				    partido15.setPaisA(pais);
+				
+				}
+				if(aux3==2) {
+					partido13.setPaisB(pais);
+					partido16.setPaisA(pais);
+					partido17.setPaisB(pais);
+				}
+				if(aux3==3) {
+					partido14.setPaisA(pais);
+					partido16.setPaisB(pais);
+					partido18.setPaisA(pais);
+				}
+				if(aux3==4) {
+					partido15.setPaisB(pais);
+					partido17.setPaisA(pais);
+					partido18.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("D")) {
+				aux4++;
+				if(aux4==1) {
+				    partido19.setPaisA(pais);
+				    partido20.setPaisB(pais);
+				    partido21.setPaisA(pais);
+				
+				}
+				if(aux4==2) {
+					partido19.setPaisB(pais);
+					partido22.setPaisA(pais);
+					partido23.setPaisB(pais);
+				}
+				if(aux4==3) {
+					partido20.setPaisA(pais);
+					partido22.setPaisB(pais);
+					partido24.setPaisA(pais);
+				}
+				if(aux4==4) {
+					partido21.setPaisB(pais);
+					partido23.setPaisA(pais);
+					partido24.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("E")) {
+				aux5++;
+				if(aux5==1) {
+				    partido25.setPaisA(pais);
+				    partido26.setPaisB(pais);
+				    partido27.setPaisA(pais);
+				
+				}
+				if(aux5==2) {
+					partido25.setPaisB(pais);
+					partido28.setPaisA(pais);
+					partido29.setPaisB(pais);
+				}
+				if(aux5==3) {
+					partido26.setPaisA(pais);
+					partido28.setPaisB(pais);
+					partido30.setPaisA(pais);
+				}
+				if(aux5==4) {
+					partido27.setPaisB(pais);
+					partido29.setPaisA(pais);
+					partido30.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("F")) {
+				aux6++;
+				if(aux6==1) {
+				    partido31.setPaisA(pais);
+				    partido32.setPaisB(pais);
+				    partido33.setPaisA(pais);
+				
+				}
+				if(aux6==2) {
+					partido31.setPaisB(pais);
+					partido34.setPaisA(pais);
+					partido35.setPaisB(pais);
+				}
+				if(aux6==3) {
+					partido32.setPaisA(pais);
+					partido34.setPaisB(pais);
+					partido36.setPaisA(pais);
+				}
+				if(aux6==4) {
+					partido33.setPaisB(pais);
+					partido35.setPaisA(pais);
+					partido36.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("G")) {
+				aux7++;
+				if(aux7==1) {
+				    partido37.setPaisA(pais);
+				    partido38.setPaisB(pais);
+				    partido39.setPaisA(pais);
+				
+				}
+				if(aux7==2) {
+					partido37.setPaisB(pais);
+					partido40.setPaisA(pais);
+					partido41.setPaisB(pais);
+				}
+				if(aux7==3) {
+					partido38.setPaisA(pais);
+					partido40.setPaisB(pais);
+					partido42.setPaisA(pais);
+				}
+				if(aux7==4) {
+					partido39.setPaisB(pais);
+					partido41.setPaisA(pais);
+					partido42.setPaisB(pais);
+				}
+				
+				
+			}
+			
+			if(pais.getGrupo().equalsIgnoreCase("H")) {
+				aux8++;
+				if(aux8==1) {
+				    partido43.setPaisA(pais);
+				    partido44.setPaisB(pais);
+				    partido45.setPaisA(pais);
+				
+				}
+				if(aux8==2) {
+					partido43.setPaisB(pais);
+					partido46.setPaisA(pais);
+					partido47.setPaisB(pais);
+				}
+				if(aux8==3) {
+					partido44.setPaisA(pais);
+					partido46.setPaisB(pais);
+					partido48.setPaisA(pais);
+				}
+				if(aux8==4) {
+					partido45.setPaisB(pais);
+					partido47.setPaisA(pais);
+					partido48.setPaisB(pais);
+				}
+				
+				
+			}
+			
 		}
 		
-		break;
-    case 2:
-    	System.out.println("¿Que grupo desea ver?");
-    	System.out.println("1-Grupo A");
-    	System.out.println("2-Grupo B");
-    	System.out.println("3-Grupo C");
-    	System.out.println("4-Grupo D");
-    	System.out.println("5-Grupo E");
-    	System.out.println("6-Grupo F");
-    	System.out.println("7-Grupo G");
-    	System.out.println("8-Grupo H");
-    	int num =entrada.nextInt();
-    	
-    	      switch (num) {
-		      case 1:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("A")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-						
-					
-		  		
-		    		 
-			       break;
-		      case 2:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("B")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-		      case 3:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("C")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-		      case 4:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("D")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-		      case 5:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("E")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-		      case 6:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("F")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-		      case 7:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("G")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-		      case 8:
-		    	  for (Grupo grupo : Grupos) {
-		    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("H")) {
-		    			  System.out.println(grupo.getEquipo1());
-		    			  System.out.println(grupo.getEquipo2());
-		    			  System.out.println(grupo.getEquipo3());
-		    			  System.out.println(grupo.getEquipo4());
-					}
-				}
-					
-			       break;
-
-		       default:
-			   break;
-    	      }
-    	
-		
-		break;
-		
-
-	   default:
-		break;
-	}
-	  
+		LinkedList<Partido> listaPartidosG =new LinkedList<Partido>();
+		listaPartidosG.add(partido1);
+		listaPartidosG.add(partido2);
+		listaPartidosG.add(partido3);
+		listaPartidosG.add(partido4);
+		listaPartidosG.add(partido5);
+		listaPartidosG.add(partido6);
+		listaPartidosG.add(partido7);
+		listaPartidosG.add(partido8);
+		listaPartidosG.add(partido9);
+		listaPartidosG.add(partido10);
+		listaPartidosG.add(partido11);
+		listaPartidosG.add(partido12);
+		listaPartidosG.add(partido13);
+		listaPartidosG.add(partido14);
+		listaPartidosG.add(partido15);
+		listaPartidosG.add(partido16);
+		listaPartidosG.add(partido17);
+		listaPartidosG.add(partido18);
+		listaPartidosG.add(partido19);
+		listaPartidosG.add(partido20);
+		listaPartidosG.add(partido21);
+		listaPartidosG.add(partido22);
+		listaPartidosG.add(partido23);
+		listaPartidosG.add(partido24);
+		listaPartidosG.add(partido25);
+		listaPartidosG.add(partido26);
+		listaPartidosG.add(partido27);
+		listaPartidosG.add(partido28);
+		listaPartidosG.add(partido29);
+		listaPartidosG.add(partido30);
+		listaPartidosG.add(partido31);
+		listaPartidosG.add(partido32);
+		listaPartidosG.add(partido33);
+		listaPartidosG.add(partido34);
+		listaPartidosG.add(partido35);
+		listaPartidosG.add(partido36);
+		listaPartidosG.add(partido37);
+		listaPartidosG.add(partido38);
+		listaPartidosG.add(partido39);
+		listaPartidosG.add(partido40);
+		listaPartidosG.add(partido41);
+		listaPartidosG.add(partido42);
+		listaPartidosG.add(partido43);
+		listaPartidosG.add(partido44);
+		listaPartidosG.add(partido45);
+		listaPartidosG.add(partido46);
+		listaPartidosG.add(partido47);
+		listaPartidosG.add(partido48);
 		
 		
-		
-		
-		/*for (Grupo grupo : Grupos) {
-			
-			System.out.println("Grupo " +  grupo.getEquipo1().getGrupo() + " Nombre " + grupo.getEquipo1().getNombre());
+		/*System.out.println("Los partidos del Grupo A son ");
+		for (Partido partido : listaPartidosG) {
+			if (partido.getIdPartido().equals("A")) {
+				
+				System.out.println(partido.getPaisA().getNombre()+ " vs " +partido.getPaisB().getNombre());
+				
+			}
 		}*/
 		
 		
+		//System.out.println("-"+partido1.getPaisA().getNombre()+ " vs " + partido1.getPaisB().getNombre());
 		
+		
+		
+		
+		//-------------------------- Interfaz De Usuario/Administrador------------------------------//
+		
+		
+		Scanner aux = new Scanner(System.in);
+		System.out.println("Bienvenido");
+		System.out.println("¿Como desea ingresar?");
+		System.out.println("1-Espectador");
+		System.out.println("2-Administrador");
+		int menu=aux.nextInt();
+		switch (menu) {
+		case 1:
+			MenuUsuario(Grupos,faseGrupos);
+			break;
+         case 2:
+			
+			break;
+
+		default:
+			break;
+		}
 			
 		}
+	
+	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos) {
+		int opt=0;
+		do {
+			
+			Scanner entrada = new Scanner(System.in);
+		  System.out.println("Bienvenido al fixtuere del Mundial");
+		  System.out.println("-----------------------------------");
+		  
+		  System.out.println("¿Que opcion desea elegir?");
+		  System.out.println("1-Ver lista de todos los paises ");
+		  System.out.println("2-Ver los grupos ");
+		  int res= entrada.nextInt();
+		  
+		  switch (res) {
+		  
+			case 1:
+				System.out.println("Lista de los 32 Equipos");
+				for (int i = 0; i <faseGrupos.size(); i++) {
+					System.out.println("Equipo numero "+ (i+1)+ ":" +  faseGrupos.get(i));
+				}
+				
+				break;
+		    case 2:
+		    	System.out.println("¿Que grupo desea ver?");
+		    	System.out.println("1-Grupo A");
+		    	System.out.println("2-Grupo B");
+		    	System.out.println("3-Grupo C");
+		    	System.out.println("4-Grupo D");
+		    	System.out.println("5-Grupo E");
+		    	System.out.println("6-Grupo F");
+		    	System.out.println("7-Grupo G");
+		    	System.out.println("8-Grupo H");
+		    	int num =entrada.nextInt();
+		    	
+		    	      switch (num) {
+				      case 1:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("A")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+								
+							
+				  		
+				    		 
+					       break;
+				      case 2:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("B")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+				      case 3:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("C")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+				      case 4:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("D")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+				      case 5:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("E")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+				      case 6:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("F")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+				      case 7:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("G")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+				      case 8:
+				    	  for (Grupo grupo : Grupos) {
+				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("H")) {
+				    			  System.out.println(grupo.getEquipo1());
+				    			  System.out.println(grupo.getEquipo2());
+				    			  System.out.println(grupo.getEquipo3());
+				    			  System.out.println(grupo.getEquipo4());
+							}
+						}
+							
+					       break;
+
+				       default:
+					   break;
+		    	      }
+		    	
+				
+				break;
+				
+		    case 3:
+		    	
+		    	break;
+				
+
+			   default:
+				break;
+			}
+		  System.out.println("Desea volver al menu Principal?");
+		  System.out.println("1-si");
+		  System.out.println("2-no");
+		  opt=entrada.nextInt();
+			
+		}while(opt==1);
+		  
+	}
 
    
   
@@ -430,3 +765,7 @@ public class Main {
   
 
 }
+/*for (Grupo grupo : Grupos) {
+			
+			System.out.println("Grupo " +  grupo.getEquipo1().getGrupo() + " Nombre " + grupo.getEquipo1().getNombre());
+		}*/
