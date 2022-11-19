@@ -1,11 +1,13 @@
 package Interfaz;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 import Logica.Grupo;
 import Logica.Paises;
 import Logica.Partido;
+import Logica.Admin;
 
 public class Main {
 
@@ -587,9 +589,9 @@ public class Main {
 		
 		
 		//-------------------------- Interfaz De Usuario/Administrador------------------------------//
-		
-		
-		Scanner aux = new Scanner(System.in);
+		int corr=0;
+		do {
+			Scanner aux = new Scanner(System.in);
 		System.out.println("Bienvenido");
 		System.out.println("¿Como desea ingresar?");
 		System.out.println("1-Espectador");
@@ -598,16 +600,40 @@ public class Main {
 		switch (menu) {
 		case 1:
 			MenuUsuario(Grupos,faseGrupos,listaPartidosG);
+			corr=1;
 			break;
          case 2:
-			
+			MenuAdmin(listaPartidosG);
+			corr=1;
 			break;
 
 		default:
+			System.out.println("Opcion incorrecta vuelva a intentarlo \n");
+			corr=0;
 			break;
 		}
+		if (corr==1) {
+			System.out.println("\n Desea volver al menu de Opcion de Usuario?");
+			  System.out.println("1-si");
+			  System.out.println("2-no");
+			  corr=aux.nextInt();
+		}
+		
+		}while(corr<=1);
+		
 			
 		}
+	
+	
+	public static   void MenuAdmin(LinkedList<Partido> listaPartidosG) {
+		Admin admin =new Admin("juan");
+		
+		admin.cargarResultados(listaPartidosG);
+		
+		System.out.println(listaPartidosG.get(1));
+		
+	}
+	
 	
 	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG) {
 		int opt=0;
@@ -629,30 +655,45 @@ public class Main {
 				System.out.println("Lista de los 32 Equipos");
 				for (Paises pais : faseGrupos) {
 					System.out.println("Nombre de pais: "+pais.getNombre()+ "\n Goles: "+pais.getGoles()+ "\n Grupo: " +pais.getGrupo()+"\n");
+					opt=1;
 					
 				}
 				
 				break;
 		    case 2:
 		    	verGrupos(Grupos);
+		    	opt=1;
 				
 				break;
 				
 		    case 3:
 		    	verPartidos(listaPartidosG);
+		    	opt=1;
 		    	break;
 				
 
 			   default:
+				   System.out.println("Opcion no valida \n");
+				   opt=0;
 				   
-				break;
+				
 			}
-		  System.out.println("\n Desea volver al menu Principal?");
+		  if (opt==1) {
+			System.out.println("\n Quieres ver las Otras Opciones de Vista?");
 		  System.out.println("1-si");
 		  System.out.println("2-no");
-		  opt=entrada.nextInt();
+		  int up = entrada.nextInt();
+	      if (up==1) {
+ 	    	   opt=0;
+				
+			}if (up==2) {
+				opt=2;
+				
+			}
+		}
+		  
 			
-		}while(opt==1);
+		}while(opt<=1);
 		  
 	}
 	public static void verGrupos(LinkedList<Grupo> Grupos) {
@@ -680,7 +721,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 							
@@ -696,7 +737,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -709,7 +750,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -722,7 +763,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -735,7 +776,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -748,7 +789,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -761,7 +802,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -774,7 +815,7 @@ public class Main {
 			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
 			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
 			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
-			    			  opt=2;
+			    			  opt=1;
 						}
 					}
 						
@@ -785,14 +826,21 @@ public class Main {
 			    	   opt=0;
 			    	   
 	    	      }
-	    	      System.out.println("Queres ver otros grupos?");
+	    	      if (opt==1) {
+					System.out.println("Queres ver otros grupos?");
 	    	      System.out.println("1-Si");
 	    	      System.out.println("2-No");
 	    	      int up = entrada.nextInt();
-	    	       if (up==1) {
-	    	    	   opt=0;
-					
-				} 
+	    	      if (up==1) {
+	     	    	   opt=0;
+	   				
+	   			}if (up==2) {
+	   				opt=2;
+	   				
+	   			}
+				}
+	    	      
+	   			
 	    	      
 	    	     
 			
@@ -826,7 +874,7 @@ public class Main {
 					if (partido.getIdPartido().equals("A")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -837,7 +885,7 @@ public class Main {
 					if (partido.getIdPartido().equals("B")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -849,7 +897,7 @@ public class Main {
 					if (partido.getIdPartido().equals("C")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -861,7 +909,7 @@ public class Main {
 					if (partido.getIdPartido().equals("D")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -873,7 +921,7 @@ public class Main {
 					if (partido.getIdPartido().equals("E")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -885,7 +933,7 @@ public class Main {
 					if (partido.getIdPartido().equals("F")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -897,7 +945,7 @@ public class Main {
 					if (partido.getIdPartido().equals("G")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -909,7 +957,7 @@ public class Main {
 					if (partido.getIdPartido().equals("H")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
-						opt=2;
+						opt=1;
 					}
 				}
 				
@@ -920,6 +968,20 @@ public class Main {
 				opt=0;
 				break;
 			}
+	    	if (opt==1 ) {
+				System.out.println("Queres ver otros Paartidos ?");
+  	      System.out.println("1-Si");
+  	      System.out.println("2-No");
+  	      int up = entrada.nextInt();
+  	       if (up==1) {
+  	    	   opt=0;
+				
+			}if (up==2) {
+				opt=2;
+				
+			}
+			}
+	    	
 		}while(opt<=1 );
 		
 		
