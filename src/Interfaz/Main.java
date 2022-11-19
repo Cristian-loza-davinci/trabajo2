@@ -97,6 +97,7 @@ public class Main {
 		Grupo grupoG = new Grupo(null,null,null,null);
 		Grupo grupoH = new Grupo(null,null,null,null);
 		
+		
 		//--------------------AGRUPACION DE PAISES EN SUS GRUPOS-----------
 		int cont1=0;
 		int cont2=0;
@@ -596,7 +597,7 @@ public class Main {
 		int menu=aux.nextInt();
 		switch (menu) {
 		case 1:
-			MenuUsuario(Grupos,faseGrupos);
+			MenuUsuario(Grupos,faseGrupos,listaPartidosG);
 			break;
          case 2:
 			
@@ -608,7 +609,7 @@ public class Main {
 			
 		}
 	
-	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos) {
+	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG) {
 		int opt=0;
 		do {
 			
@@ -619,144 +620,309 @@ public class Main {
 		  System.out.println("¿Que opcion desea elegir?");
 		  System.out.println("1-Ver lista de todos los paises ");
 		  System.out.println("2-Ver los grupos ");
+		  System.out.println("3-Ver los Partidos");
 		  int res= entrada.nextInt();
 		  
 		  switch (res) {
 		  
 			case 1:
 				System.out.println("Lista de los 32 Equipos");
-				for (int i = 0; i <faseGrupos.size(); i++) {
-					System.out.println("Equipo numero "+ (i+1)+ ":" +  faseGrupos.get(i));
+				for (Paises pais : faseGrupos) {
+					System.out.println("Nombre de pais: "+pais.getNombre()+ "\n Goles: "+pais.getGoles()+ "\n Grupo: " +pais.getGrupo()+"\n");
+					
 				}
 				
 				break;
 		    case 2:
-		    	System.out.println("¿Que grupo desea ver?");
-		    	System.out.println("1-Grupo A");
-		    	System.out.println("2-Grupo B");
-		    	System.out.println("3-Grupo C");
-		    	System.out.println("4-Grupo D");
-		    	System.out.println("5-Grupo E");
-		    	System.out.println("6-Grupo F");
-		    	System.out.println("7-Grupo G");
-		    	System.out.println("8-Grupo H");
-		    	int num =entrada.nextInt();
-		    	
-		    	      switch (num) {
-				      case 1:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("A")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-								
-							
-				  		
-				    		 
-					       break;
-				      case 2:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("B")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-				      case 3:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("C")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-				      case 4:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("D")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-				      case 5:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("E")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-				      case 6:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("F")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-				      case 7:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("G")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-				      case 8:
-				    	  for (Grupo grupo : Grupos) {
-				    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("H")) {
-				    			  System.out.println(grupo.getEquipo1());
-				    			  System.out.println(grupo.getEquipo2());
-				    			  System.out.println(grupo.getEquipo3());
-				    			  System.out.println(grupo.getEquipo4());
-							}
-						}
-							
-					       break;
-
-				       default:
-					   break;
-		    	      }
-		    	
+		    	verGrupos(Grupos);
 				
 				break;
 				
 		    case 3:
-		    	
+		    	verPartidos(listaPartidosG);
 		    	break;
 				
 
 			   default:
+				   
 				break;
 			}
-		  System.out.println("Desea volver al menu Principal?");
+		  System.out.println("\n Desea volver al menu Principal?");
 		  System.out.println("1-si");
 		  System.out.println("2-no");
 		  opt=entrada.nextInt();
 			
 		}while(opt==1);
 		  
+	}
+	public static void verGrupos(LinkedList<Grupo> Grupos) {
+		Scanner entrada = new Scanner(System.in);
+		int opt=0;
+		do {
+			
+			System.out.println("¿Que grupo desea ver?");
+	    	System.out.println("1-Grupo A");
+	    	System.out.println("2-Grupo B");
+	    	System.out.println("3-Grupo C");
+	    	System.out.println("4-Grupo D");
+	    	System.out.println("5-Grupo E");
+	    	System.out.println("6-Grupo F");
+	    	System.out.println("7-Grupo G");
+	    	System.out.println("8-Grupo H");
+	    	int num =entrada.nextInt();
+	    	
+	    	      switch (num) {
+			      case 1:
+			    	  System.out.println("El grupo A se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("A")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+							
+						
+			  		
+			    		 
+				       break;
+			      case 2:
+			    	  System.out.println("El grupo B se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("B")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+			      case 3:
+			    	  System.out.println("El grupo C se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("C")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+			      case 4:
+			    	  System.out.println("El grupo D se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("D")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+			      case 5:
+			    	  System.out.println("El grupo E se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("E")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+			      case 6:
+			    	  System.out.println("El grupo F se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("F")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+			      case 7:
+			    	  System.out.println("El grupo G se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("G")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+			      case 8:
+			    	  System.out.println("El grupo H se compone por: \n");
+			    	  for (Grupo grupo : Grupos) {
+			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("H")) {
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  opt=2;
+						}
+					}
+						
+				       break;
+
+			       default:
+			    	   System.out.println("Opcion no valido, vuelva a intentar");
+			    	   opt=0;
+			    	   
+	    	      }
+	    	      System.out.println("Queres ver otros grupos?");
+	    	      System.out.println("1-Si");
+	    	      System.out.println("2-No");
+	    	      int up = entrada.nextInt();
+	    	       if (up==1) {
+	    	    	   opt=0;
+					
+				} 
+	    	      
+	    	     
+			
+		}while(opt<=1);
+		
+		
+		
+    	
+		
+	}
+	public static void verPartidos(LinkedList<Partido> listaPartidosG) {
+		Scanner entrada = new Scanner(System.in);
+		int opt=0;
+		do {
+			
+			System.out.println("Partidos de que grupo quiere ver?");
+	    	System.out.println("1-Grupo A");
+	    	System.out.println("2-Grupo B");
+	    	System.out.println("3-Grupo C");
+	    	System.out.println("4-Grupo D");
+	    	System.out.println("5-Grupo E");
+	    	System.out.println("6-Grupo F");
+	    	System.out.println("7-Grupo G");
+	    	System.out.println("8-Grupo H");
+	    	int grup=entrada.nextInt();
+	    	
+	    	switch (grup) {
+			case 1:
+				System.out.println("Los partidos del Grupo A son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("A")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+			case 2:
+				System.out.println("Los partidos del Grupo B son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("B")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+				
+			case 3:
+				System.out.println("Los partidos del Grupo C son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("C")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+				
+			case 4:
+				System.out.println("Los partidos del Grupo D son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("D")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+				
+			case 5:
+				System.out.println("Los partidos del Grupo E son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("E")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+				
+			case 6:
+				System.out.println("Los partidos del Grupo F son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("F")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+				
+			case 7:
+				System.out.println("Los partidos del Grupo G son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("G")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+				
+			case 8:
+				System.out.println("Los partidos del Grupo H son ");
+				for (Partido partido : listaPartidosG) {
+					if (partido.getIdPartido().equals("H")) {
+						
+						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						opt=2;
+					}
+				}
+				
+				break;
+
+			default:
+				System.out.println("Opcion incorrecta vuelva a intertarlo ");
+				opt=0;
+				break;
+			}
+		}while(opt<=1 );
+		
+		
 	}
 
    

@@ -1,5 +1,7 @@
 package Logica;
 
+import java.util.LinkedList;
+
 public class Partido {
 	private String idPartido;
 	private Paises paisA;
