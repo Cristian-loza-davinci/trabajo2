@@ -14,45 +14,45 @@ public class Main {
 	public static void main(String[] args) {
 		//faseGrupos();
 	   
-	    Paises pais1 = new Paises("Argentina",0,false,"C");
-		Paises pais2 = new Paises("Arabia Saudita",0,false,"C");
-		Paises pais3 = new Paises("Mexico",0,false,"C");
-		Paises pais4 = new Paises("Polonia",0,false,"C");
+	    Paises pais1 = new Paises("Argentina",0,false,"C",0);
+		Paises pais2 = new Paises("Arabia Saudita",0,false,"C",0);
+		Paises pais3 = new Paises("Mexico",0,false,"C",0);
+		Paises pais4 = new Paises("Polonia",0,false,"C",0);
 		
-		Paises pais5 = new Paises("Qatar",0,false,"A");
-		Paises pais6 = new Paises("Ecuador",0,false,"A");
-		Paises pais7 = new Paises("Senegal",0,false,"A");
-		Paises pais8 = new Paises("Holanda",0,false,"A");
+		Paises pais5 = new Paises("Qatar",0,false,"A",0);
+		Paises pais6 = new Paises("Ecuador",0,false,"A",0);
+		Paises pais7 = new Paises("Senegal",0,false,"A",0);
+		Paises pais8 = new Paises("Holanda",0,false,"A",0);
 		
-		Paises pais9 = new Paises("Inglaterra",0,false,"B");
-		Paises pais10 = new Paises("Iran",0,false,"B");
-		Paises pais11 = new Paises("USA",0,false,"B");
-		Paises pais12 = new Paises("Gales",0,false,"B");
+		Paises pais9 = new Paises("Inglaterra",0,false,"B",0);
+		Paises pais10 = new Paises("Iran",0,false,"B",0);
+		Paises pais11 = new Paises("USA",0,false,"B",0);
+		Paises pais12 = new Paises("Gales",0,false,"B",0);
 		
-		Paises pais13= new Paises("Francia",0,false,"D");
-		Paises pais14= new Paises("Australia",0,false,"D");
-		Paises pais15= new Paises("Dinamarca",0,false,"D");
-		Paises pais16= new Paises("Tunez",0,false,"D");
+		Paises pais13= new Paises("Francia",0,false,"D",0);
+		Paises pais14= new Paises("Australia",0,false,"D",0);
+		Paises pais15= new Paises("Dinamarca",0,false,"D",0);
+		Paises pais16= new Paises("Tunez",0,false,"D",0);
 		
-		Paises pais17= new Paises("España",0,false,"E");
-		Paises pais18= new Paises("Costa Rica",0,false,"E");
-		Paises pais19= new Paises("Alemania",0,false,"E");
-		Paises pais20= new Paises("Japon",0,false,"E");
+		Paises pais17= new Paises("España",0,false,"E",0);
+		Paises pais18= new Paises("Costa Rica",0,false,"E",0);
+		Paises pais19= new Paises("Alemania",0,false,"E",0);
+		Paises pais20= new Paises("Japon",0,false,"E",0);
 		
-		Paises pais21= new Paises("Belgica",0,false,"F");
-		Paises pais22= new Paises("Canada",0,false,"F");
-		Paises pais23= new Paises("Marruecos",0,false,"F");
-		Paises pais24= new Paises("Croacia",0,false,"F");
+		Paises pais21= new Paises("Belgica",0,false,"F",0);
+		Paises pais22= new Paises("Canada",0,false,"F",0);
+		Paises pais23= new Paises("Marruecos",0,false,"F",0);
+		Paises pais24= new Paises("Croacia",0,false,"F",0);
 		
-		Paises pais25= new Paises("Brazil",0,false,"G");
-		Paises pais26= new Paises("Serbia",0,false,"G");
-		Paises pais27= new Paises("Suiza",0,false,"G");
-		Paises pais28= new Paises("Camerun",0,false,"G");
+		Paises pais25= new Paises("Brazil",0,false,"G",0);
+		Paises pais26= new Paises("Serbia",0,false,"G",0);
+		Paises pais27= new Paises("Suiza",0,false,"G",0);
+		Paises pais28= new Paises("Camerun",0,false,"G",0);
 		
-		Paises pais29= new Paises("Portugal",0,false,"H");
-		Paises pais30= new Paises("Ghana",0,false,"H");
-		Paises pais31= new Paises("Uruguay",0,false,"H");
-		Paises pais32= new Paises("Corea del Sur",0,false,"H");
+		Paises pais29= new Paises("Portugal",0,false,"H",0);
+		Paises pais30= new Paises("Ghana",0,false,"H",0);
+		Paises pais31= new Paises("Uruguay",0,false,"H",0);
+		Paises pais32= new Paises("Corea del Sur",0,false,"H",0);
 		
 		
 		LinkedList<Paises> faseGrupos =new LinkedList<Paises>();
@@ -573,17 +573,12 @@ public class Main {
 		listaPartidosG.add(partido48);
 		
 		
-		/*System.out.println("Los partidos del Grupo A son ");
-		for (Partido partido : listaPartidosG) {
-			if (partido.getIdPartido().equals("A")) {
-				
-				System.out.println(partido.getPaisA().getNombre()+ " vs " +partido.getPaisB().getNombre());
-				
-			}
-		}*/
+		//--------------Lista de Octavos--------------------//
+		LinkedList<Paises> Octavos =new LinkedList<Paises>();
+	
 		
 		
-		//System.out.println("-"+partido1.getPaisA().getNombre()+ " vs " + partido1.getPaisB().getNombre());
+		
 		
 		
 		
@@ -599,11 +594,11 @@ public class Main {
 		int menu=aux.nextInt();
 		switch (menu) {
 		case 1:
-			MenuUsuario(Grupos,faseGrupos,listaPartidosG);
+			MenuUsuario(Grupos,faseGrupos,listaPartidosG, Octavos);
 			corr=1;
 			break;
          case 2:
-			MenuAdmin(listaPartidosG);
+			MenuAdmin(listaPartidosG, Grupos, Octavos);
 			corr=1;
 			break;
 
@@ -625,17 +620,62 @@ public class Main {
 		}
 	
 	
-	public static   void MenuAdmin(LinkedList<Partido> listaPartidosG) {
-		Admin admin =new Admin("juan");
+	public static  void MenuAdmin(LinkedList<Partido> listaPartidosG,LinkedList<Grupo> Grupos,LinkedList<Paises> Octavos ) {
+		Scanner aux2 = new Scanner(System.in);
+		int lis=0;
+		do {
+			System.out.println("Bienvenido al menu Administrativo \n");
 		
-		admin.cargarResultados(listaPartidosG);
+		System.out.println("¿Que opcion desea elegir?");
+		System.out.println("1-Cargar los resultados de los partidos");
+		System.out.println("2-Subir Octavos");
+		int resp=aux2.nextInt();
+		switch (resp) {
+		case 1:
+			Admin.cargarResultados(listaPartidosG);
+			Admin.darPuntos(listaPartidosG);
+			System.out.println("Resultados cargados correctamente \n");
+			System.out.println("¿Quieres ver los resultados?");
+			System.out.println("1-Si");
+			System.out.println("2-No");
+			int aux=aux2.nextInt();
+			if (aux==1) {
+				Admin.mostarResultadosFG(listaPartidosG);
+ 			}
+			break;
+		case 2:
+			Admin.clasiOctavos(Grupos, Octavos);
+			System.out.println("Lista subida correctamente");
+			
+		 break;
+
+		default:
+			break;
+		}
+		System.out.println("Quieres volver al menu del Admin?");
+		System.out.println("1-Si");
+		System.out.println("2-No");
+		int cod=aux2.nextInt();
+		if (cod==1) {
+			lis=0;
+			
+		}
+		if (cod==2) {
+			lis=2;
+			
+		}
+		}while(lis<1);
 		
-		System.out.println(listaPartidosG.get(1));
+		
+		
+		
+		
+		
 		
 	}
 	
 	
-	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG) {
+	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG,LinkedList<Paises> Octavos) {
 		int opt=0;
 		do {
 			
@@ -647,6 +687,7 @@ public class Main {
 		  System.out.println("1-Ver lista de todos los paises ");
 		  System.out.println("2-Ver los grupos ");
 		  System.out.println("3-Ver los Partidos");
+		  System.out.println("4-Ver lista de Octavos");
 		  int res= entrada.nextInt();
 		  
 		  switch (res) {
@@ -670,6 +711,13 @@ public class Main {
 		    	verPartidos(listaPartidosG);
 		    	opt=1;
 		    	break;
+		    case 4:
+		    	for (Paises paises2 : Octavos) {
+					System.out.println("Los paises que pasaron a Octavos son : " +paises2.getNombre());
+					
+				}
+		    	opt=1;
+		    	break;
 				
 
 			   default:
@@ -689,7 +737,7 @@ public class Main {
 			}if (up==2) {
 				opt=2;
 				
-			}
+			} 
 		}
 		  
 			
@@ -717,10 +765,10 @@ public class Main {
 			    	  System.out.println("El grupo A se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("A")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -733,10 +781,10 @@ public class Main {
 			    	  System.out.println("El grupo B se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("B")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -746,10 +794,10 @@ public class Main {
 			    	  System.out.println("El grupo C se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("C")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -759,10 +807,10 @@ public class Main {
 			    	  System.out.println("El grupo D se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("D")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -772,10 +820,10 @@ public class Main {
 			    	  System.out.println("El grupo E se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("E")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -785,10 +833,10 @@ public class Main {
 			    	  System.out.println("El grupo F se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("F")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -798,10 +846,10 @@ public class Main {
 			    	  System.out.println("El grupo G se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("G")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -811,10 +859,10 @@ public class Main {
 			    	  System.out.println("El grupo H se compone por: \n");
 			    	  for (Grupo grupo : Grupos) {
 			    		  if (grupo.getEquipo1().getGrupo().equalsIgnoreCase("H")) {
-			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre());
-			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre());
-			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre());
-			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre());
+			    			  System.out.println("Pais 1: " +grupo.getEquipo1().getNombre()+": " +grupo.getEquipo1().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 2: " +grupo.getEquipo2().getNombre()+": " +grupo.getEquipo2().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 3: " +grupo.getEquipo3().getNombre()+": " +grupo.getEquipo3().getPuntos()+ " Puntos");
+			    			  System.out.println("Pais 4: " +grupo.getEquipo4().getNombre()+": " +grupo.getEquipo4().getPuntos()+ " Puntos");
 			    			  opt=1;
 						}
 					}
@@ -867,6 +915,7 @@ public class Main {
 	    	System.out.println("8-Grupo H");
 	    	int grup=entrada.nextInt();
 	    	
+	    	
 	    	switch (grup) {
 			case 1:
 				System.out.println("Los partidos del Grupo A son ");
@@ -874,6 +923,7 @@ public class Main {
 					if (partido.getIdPartido().equals("A")) {
 						
 						System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+						
 						opt=1;
 					}
 				}
