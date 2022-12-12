@@ -8,7 +8,7 @@ import Logica.Grupo;
 import Logica.Paises;
 import Logica.Partido;
 import Logica.Admin;
-
+import Logica.Torneo;
 public class Main {
 
 	public static void main(String[] args) {
@@ -575,6 +575,12 @@ public class Main {
 		
 		//--------------Lista de Octavos--------------------//
 		LinkedList<Paises> Octavos =new LinkedList<Paises>();
+		
+	
+		
+		LinkedList<Partido> partido8vos =new LinkedList<Partido>();
+		
+		
 	
 		
 		
@@ -594,7 +600,15 @@ public class Main {
 		int menu=aux.nextInt();
 		switch (menu) {
 		case 1:
-			MenuUsuario(Grupos,faseGrupos,listaPartidosG, Octavos);
+			int carga=0;
+			if (carga==0) {
+				Admin.cargarResultados(listaPartidosG);
+				Admin.darPuntos(listaPartidosG);
+				Admin.clasiOctavos(Grupos, Octavos);
+			}
+			MenuUsuario(Grupos,faseGrupos,listaPartidosG, Octavos,partido8vos);
+			
+			
 			corr=1;
 			break;
          case 2:
@@ -675,7 +689,7 @@ public class Main {
 	}
 	
 	
-	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG,LinkedList<Paises> Octavos) {
+	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG,LinkedList<Paises> Octavos,LinkedList<Partido> partido8vos) {
 		int opt=0;
 		do {
 			
@@ -688,6 +702,7 @@ public class Main {
 		  System.out.println("2-Ver los grupos ");
 		  System.out.println("3-Ver los Partidos");
 		  System.out.println("4-Ver lista de Octavos");
+		  System.out.println("5-Ver resultados de Octavos de final");
 		  int res= entrada.nextInt();
 		  
 		  switch (res) {
@@ -717,6 +732,15 @@ public class Main {
 					
 				}
 		    	opt=1;
+		    	break;
+		    	
+		    case 5:
+		    	Torneo.Partido8vos(Octavos,partido8vos);
+		    	for (Partido partidoOct : partido8vos) {
+		    		
+		    		System.out.println("\n"+partidoOct.getPaisA().getNombre()+" " + partidoOct.getGoles1()+ " vs " +partidoOct.getGoles2()+ " " + partidoOct.getPaisB().getNombre()+ ": Finalizado");
+					
+				}
 		    	break;
 				
 
@@ -750,6 +774,7 @@ public class Main {
 		do {
 			
 			System.out.println("¿Que grupo desea ver?");
+			System.out.println("Ingrese con numero la opcion que desea elegir");
 	    	System.out.println("1-Grupo A");
 	    	System.out.println("2-Grupo B");
 	    	System.out.println("3-Grupo C");
