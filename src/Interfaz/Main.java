@@ -1,6 +1,5 @@
 package Interfaz;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -573,12 +572,18 @@ public class Main {
 		listaPartidosG.add(partido48);
 		
 		
-		//--------------Lista de Octavos--------------------//
+		//---------------------Listas--------------------//
 		LinkedList<Paises> Octavos =new LinkedList<Paises>();
+		LinkedList<Paises> cuartos =new LinkedList<Paises>();
+		LinkedList<Paises> semis =new LinkedList<Paises>();
+		LinkedList<Paises> final0=new LinkedList<Paises>();
 		
 	
 		
 		LinkedList<Partido> partido8vos =new LinkedList<Partido>();
+		LinkedList<Partido> cuartosFinal =new LinkedList<Partido>();
+		LinkedList<Partido> semiFinal=new LinkedList<Partido>();
+		LinkedList<Partido> Finales=new LinkedList<Partido>();
 		
 		
 	
@@ -591,6 +596,7 @@ public class Main {
 		
 		//-------------------------- Interfaz De Usuario/Administrador------------------------------//
 		int corr=0;
+		int carga=0;
 		do {
 			Scanner aux = new Scanner(System.in);
 		System.out.println("Bienvenido");
@@ -598,21 +604,37 @@ public class Main {
 		System.out.println("1-Espectador");
 		System.out.println("2-Administrador");
 		int menu=aux.nextInt();
+		
 		switch (menu) {
 		case 1:
-			int carga=0;
+			
 			if (carga==0) {
 				Admin.cargarResultados(listaPartidosG);
 				Admin.darPuntos(listaPartidosG);
 				Admin.clasiOctavos(Grupos, Octavos);
+				Torneo.Partido8vos(Octavos,partido8vos);
+		    	Torneo.Resultado8vos(partido8vos);
+		    	Torneo.pase4tos(partido8vos, cuartos);
+		    	Torneo.partidoCuartos(cuartos, cuartosFinal);
+		    	Torneo.resultado4tos(cuartosFinal);
+		    	Torneo.paseSemifinal(cuartosFinal, semis);
+		    	Torneo.partidoSemifinal(semis, semiFinal);
+		    	Torneo.resultadoSemis(semiFinal);
+		    	Torneo.paseFinal(final0, semiFinal);
+		    	Torneo.partidoFinal(final0, Finales);
+		    	Torneo.resultadoFinal(Finales);
+		    	
+				
 			}
-			MenuUsuario(Grupos,faseGrupos,listaPartidosG, Octavos,partido8vos);
+			MenuUsuario(Grupos,faseGrupos,listaPartidosG, Octavos,partido8vos, cuartos, cuartosFinal, semis, semiFinal, final0, Finales);
 			
 			
 			corr=1;
 			break;
          case 2:
+        	 carga=1;
 			MenuAdmin(listaPartidosG, Grupos, Octavos);
+			
 			corr=1;
 			break;
 
@@ -639,10 +661,15 @@ public class Main {
 		int lis=0;
 		do {
 			System.out.println("Bienvenido al menu Administrativo \n");
+			System.out.println("(como  entro en modo Admin debera subir la informacion para que el usuario pueda ver los resultados)");
+			System.out.println("\n");
 		
 		System.out.println("¿Que opcion desea elegir?");
 		System.out.println("1-Cargar los resultados de los partidos");
 		System.out.println("2-Subir Octavos");
+		System.out.println("3-Subir Cuartos");
+		System.out.println("4-Subir Semifinales");
+		System.out.println("5-Subir Final");
 		int resp=aux2.nextInt();
 		switch (resp) {
 		case 1:
@@ -662,6 +689,26 @@ public class Main {
 			System.out.println("Lista subida correctamente");
 			
 		 break;
+		case 3:
+			Torneo.pase4tos(listaPartidosG, Octavos);
+			Torneo.partidoCuartos(Octavos, listaPartidosG);
+			Torneo.resultado4tos(listaPartidosG);
+			
+			System.out.println("Informacion de Cuartos  subida correctamente");
+			break;
+			
+		case 4:
+			Torneo.paseSemifinal(listaPartidosG, Octavos);
+			Torneo.partidoSemifinal(Octavos, listaPartidosG);
+			Torneo.resultadoSemis(listaPartidosG);
+			System.out.println("Informacion de Semis  subida correctamente");
+			break;
+		case 5:
+			Torneo.paseFinal(Octavos, listaPartidosG);
+			Torneo.partidoFinal(Octavos, listaPartidosG);
+			Torneo.resultadoFinal(listaPartidosG);
+			System.out.println("Informacion de la Final  subida correctamente");
+			break;
 
 		default:
 			break;
@@ -689,7 +736,7 @@ public class Main {
 	}
 	
 	
-	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG,LinkedList<Paises> Octavos,LinkedList<Partido> partido8vos) {
+	public static  void MenuUsuario(LinkedList<Grupo> Grupos,LinkedList<Paises> faseGrupos,LinkedList<Partido> listaPartidosG,LinkedList<Paises> Octavos,LinkedList<Partido> partido8vos,LinkedList<Paises> cuartos,LinkedList<Partido> cuartosFinal,LinkedList<Paises> semis,LinkedList<Partido> semiFinal,LinkedList<Paises> final0,LinkedList<Partido> Finales) {
 		int opt=0;
 		do {
 			
@@ -703,6 +750,12 @@ public class Main {
 		  System.out.println("3-Ver los Partidos");
 		  System.out.println("4-Ver lista de Octavos");
 		  System.out.println("5-Ver resultados de Octavos de final");
+		  System.out.println("6-Ver lista de Cuartos de final");
+		  System.out.println("7-Ver partidos de Cuartos de Final ");
+		  System.out.println("8-Ver Lista de Semi Finalistas");
+		  System.out.println("9-Ver partido de Semifinales");
+		  System.out.println("10-Ver Lista del FINAL");
+		  System.out.println("11-Ver Partido Final");
 		  int res= entrada.nextInt();
 		  
 		  switch (res) {
@@ -735,14 +788,90 @@ public class Main {
 		    	break;
 		    	
 		    case 5:
-		    	Torneo.Partido8vos(Octavos,partido8vos);
+		    	System.out.println("Partidos de Octavos de Final");
 		    	for (Partido partidoOct : partido8vos) {
 		    		
 		    		System.out.println("\n"+partidoOct.getPaisA().getNombre()+" " + partidoOct.getGoles1()+ " vs " +partidoOct.getGoles2()+ " " + partidoOct.getPaisB().getNombre()+ ": Finalizado");
 					
 				}
 		    	break;
-				
+		    	
+		    case 6:
+		    	
+		    	
+		    	System.out.println("Los paises que pasaron a Cuartos de Final son : ");
+		    	for (Paises paises : cuartos) {
+		    		System.out.println("Nombre: " +paises.getNombre());
+				}
+		    	System.out.println("\n");
+		    	break;
+		    	
+		    case 7:
+		    	System.out.println("Partidos de Caurtos de Final");
+		    	for (Partido partido : cuartosFinal) {
+		    		System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+				}
+		    	System.out.println("\n");
+		    	break;
+		    	
+		    case 8:
+		    	System.out.println("Los paises que pasaron a la Semi Final son : ");
+		    	for (Paises paises : semis) {
+		    		System.out.println("Nombre: " +paises.getNombre());
+				}
+		    	System.out.println("\n");
+		    	break;
+		    case 9:
+		    	System.out.println("Partidos de Semi Final");
+		    	for (Partido partido : semiFinal) {
+		    		System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+				}
+		    	
+		    	System.out.println("\n");
+		    	
+		    	break;
+		    case 10:
+		    	System.out.println("Los paises que pasaron  a la Final son : ");
+		    	for (Paises pais : final0) {
+		    		System.out.println("Finalista: " +pais.getNombre());
+				}
+		    	System.out.println("\n");
+		    	break;
+		    case 11:
+		    	System.out.println("Partidos de la  Final es: ");
+		    	
+		    	for (Partido partido : Finales) {
+		    		System.out.println("\n"+partido.getPaisA().getNombre()+" " + partido.getGoles1()+ " vs " +partido.getGoles2()+ " " + partido.getPaisB().getNombre()+ ": Finalizado");
+		    		
+		    		System.out.println("\n");
+		    		
+		    		if (partido.getGoles1()>partido.getGoles2()) {
+						
+						System.out.println("-----------------------------------------"+partido.getPaisA().getNombre()+"----------------------------------");
+						System.out.println("\r\n"
+								+ "    //   ) )     // | |     /|    //| |     //   ) )     //   / /     //   ) )     /|    / /     //\r\n"
+								+ "   //           //__| |    //|   // | |    //___/ /     //____       //   / /     //|   / /     //\r\n"
+								+ "  //           / ___  |   // |  //  | |   / ____ /     / ____       //   / /     // |  / /     //\r\n"
+								+ " //           //    | |  //  | //   | |  //           //           //   / /     //  | / /\r\n"
+								+ "((____/ /    //     | | //   |//    | | //           //____/ /    ((___/ /     //   |/ /     //\r\n"
+								+ "");
+					
+					}
+		    		if (partido.getGoles1()<partido.getGoles2()) {
+						System.out.println("------------------------------------------"+partido.getPaisB().getNombre()+"----------------------------------");
+						System.out.println("\r\n"
+								+ "    //   ) )     // | |     /|    //| |     //   ) )     //   / /     //   ) )     /|    / /     //\r\n"
+								+ "   //           //__| |    //|   // | |    //___/ /     //____       //   / /     //|   / /     //\r\n"
+								+ "  //           / ___  |   // |  //  | |   / ____ /     / ____       //   / /     // |  / /     //\r\n"
+								+ " //           //    | |  //  | //   | |  //           //           //   / /     //  | / /\r\n"
+								+ "((____/ /    //     | | //   |//    | | //           //____/ /    ((___/ /     //   |/ /     //\r\n"
+								+ "");
+					}
+					
+		    		
+				}
+		    	
+		    	break;
 
 			   default:
 				   System.out.println("Opcion no valida \n");
@@ -1068,7 +1197,3 @@ public class Main {
   
 
 }
-/*for (Grupo grupo : Grupos) {
-			
-			System.out.println("Grupo " +  grupo.getEquipo1().getGrupo() + " Nombre " + grupo.getEquipo1().getNombre());
-		}*/
